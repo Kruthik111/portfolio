@@ -16,3 +16,8 @@ flag=1;
 var lastScrollLocation = 0;
 var sec = ["#top",'#profile','about'];
  
+//for automatic copyright update
+
+const date = new Date();
+const year = date.getFullYear();
+document.getElementById("Copyright").innerHTML = `Copyright &#169; ${year} Kruthik s. All Rights Reserved.`;
