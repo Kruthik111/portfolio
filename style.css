@@ -49,6 +49,7 @@ a {
   text-decoration: none;
   font-weight: 600;
   text-decoration-color: white;
+  
 }
 
 a:hover {
@@ -77,14 +78,18 @@ a:hover {
 
 .hamburger-menu {
   position: relative;
-  display: inline-block;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .hamburger-icon {
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 24px;
+  
   width: 30px;
   cursor: pointer;
 }
@@ -489,4 +494,27 @@ footer {
 
 footer p {
   text-align: center;
+}
+
+.white-text{
+  color: #fff;
+}
+
+.spin{
+  /* background-color: rgb(59, 51, 64); */
+  animation: spin-animation 2s ease 1 ;
+}
+.glow-shadow{
+  box-shadow: #ff0505 10px;
+}
+.white-img{
+  filter: grayscale(10);
+}
+@keyframes spin-animation {
+  0%{
+
+  }
+  50%{
+    transform: rotate(90deg);
+  }
 }
