@@ -21,9 +21,10 @@ var sec = ["#top", '#profile', 'about'];
 var mode = "light";
 var darkmode = document.getElementById("dark-mode");
 darkmode.addEventListener("click", () => {
+    
     if (mode === "light") {
         mode = "dark";
-        
+        document.documentElement.setAttribute("dark-theme","dark");
         darkmode.classList.add("spin");
         
         setTimeout(() => {
@@ -36,6 +37,7 @@ darkmode.addEventListener("click", () => {
         
         }, 1000);
     } else {
+        document.documentElement.setAttribute("dark-theme","light");
         mode = "light";
         
         darkmode.classList.add("spin");
@@ -57,10 +59,10 @@ function toWhiteColor(){
     for(let i=0;i<alllinks.length;i++){
     alllinks[i].classList.add("white-text");
     }
-    var alllimg = document.querySelectorAll("img");
-    for(let i=0;i<alllimg.length;i++){
-    allimg[i].classList.add("white-img");
-    }
+    // var alllimg = document.querySelectorAll("img");
+    // for(let i=0;i<alllimg.length;i++){
+    // allimg[i].classList.add("white-img");
+    // }
     var shadow = document.getElementsByClassName("details-container").classList.add("glow-shadow");
 }
 function todarkColor(){
