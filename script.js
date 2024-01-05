@@ -21,7 +21,8 @@ var sec = ["#top", '#profile', 'about'];
 var mode = "light";
 var darkmode = document.getElementById("dark-mode");
 darkmode.addEventListener("click", () => {
-    
+    // document.documentElement.setAttribute("dark-theme","dark");
+    // document.getElementById("Page-1").style.fill = "blue";
     if (mode === "light") {
         mode = "dark";
         document.documentElement.setAttribute("dark-theme","dark");
@@ -32,7 +33,9 @@ darkmode.addEventListener("click", () => {
             document.querySelector(".btn-color-2").classList.add("white-text");
             darkmode.src = "./assets/sun-icon.png";
             document.body.style.backgroundColor = "rgb(0, 0, 5)";
+            // document.querySelectorall(".details-container").classList.add(".glow-shadow");
             darkmode.classList.remove("spin");
+            var batimg = document.getElementById("profileimg").src = "./assets/batman-image.webp";
             toWhiteColor();
         
         }, 1000);
@@ -40,14 +43,15 @@ darkmode.addEventListener("click", () => {
         document.documentElement.setAttribute("dark-theme","light");
         mode = "light";
         
-        darkmode.classList.add("spin");
-        
+        darkmode.classList.add("reverse-spin");
+        // document.querySelector(".details-container").remove("glow-shadow");
         setTimeout(() => {
             document.body.style.color = "black";
             document.querySelector(".btn-color-2").classList.remove("white-text");
             darkmode.src = "./assets/moon-icon.png";
             document.body.style.backgroundColor = "#fff";
-            darkmode.classList.remove("spin");
+            darkmode.classList.remove("reverse-spin");
+            var batimg = document.getElementById("profileimg").src = "./assets/Profilepic.jpg";
             todarkColor();
         }, 1000);
     }
@@ -58,6 +62,10 @@ function toWhiteColor(){
     var alllinks = document.querySelectorAll("a");
     for(let i=0;i<alllinks.length;i++){
     alllinks[i].classList.add("white-text");
+    }
+    var alllinks = document.querySelectorAll("h3");
+    for(let i=0;i<alllinks.length;i++){
+    alllinks[i].style.color="#000";
     }
     // var alllimg = document.querySelectorAll("img");
     // for(let i=0;i<alllimg.length;i++){
@@ -82,3 +90,8 @@ function todarkColor(){
 const date = new Date();
 const year = date.getFullYear();
 document.getElementById("Copyright").innerHTML = `Copyright &#169; ${year} Kruthik s. All Rights Reserved.`;
+
+
+
+
+
