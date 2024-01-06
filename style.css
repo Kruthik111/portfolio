@@ -18,7 +18,7 @@
 body {
   font-family: "Poppins", sans-serif;
     overflow-x: hidden;
-    background-color: var(--background-color);
+    background-color: var(--background-color);    
 }
 
 html {
@@ -35,7 +35,10 @@ a,
 .btn {
   transition: all 300ms ease;
 }
+.btn:hover  {
+  box-shadow: 0 0 40px 10px #f00;
 
+}
 /* DESKTOP NAV */
 
 nav,
@@ -70,6 +73,7 @@ a:hover {
   text-decoration: underline;
   text-underline-offset: 1rem;
   text-decoration-color: rgb(255,1,1);
+  border-shadow: 0 0 50px 15px #f00;
 }
 
 .logo {
@@ -96,9 +100,7 @@ a:hover {
 }
 
 
-
 .hamburger-icon {
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -196,9 +198,9 @@ section{
     border-radius: 50%;
     overflow: hidden;
 }
-.section-pic-container2>img{
+/* .section-pic-container2>img{
 
-}
+} */
 .section-pic-container{
     display: flex;
     height: 400px;
@@ -352,10 +354,13 @@ section{
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
   text-align: center;
-  /* background-color: black; */
+  /* background: linear-gradient(0.3turn,#000, rgba(255,0,0,1)); */
+  
 }
 
-
+.details-container:hover{
+  box-shadow: 0 0 50px 15px #f00;
+}
 .section-container {
   gap: 4rem;
   height: 80%;
@@ -522,7 +527,7 @@ footer p {
 }
 
 .reverse-spin{
-  animation: reverse-spin-animation 2s ease 1 ;
+  animation: reverse-spin-animation 3s ease 1 ;
 }
 .glow-shadow{
   box-shadow: 0 0 40px 10px #f00;
@@ -535,7 +540,7 @@ footer p {
 
   }
   50%{
-    transform: rotate(90deg);
+    transform: rotate(70deg);
   }
 }
 @keyframes reverse-spin-animation {
@@ -543,7 +548,7 @@ footer p {
 
   }
   50%{
-    transform: rotate(-90deg);
+    transform: rotate(-70deg);
   }
 }
 /* arrow icon animation */
@@ -560,3 +565,5 @@ footer p {
     bottom: 2rem;
   }
 }
+
+.mode{}

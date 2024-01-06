@@ -141,6 +141,10 @@
     justify-content: center;
   }
 
+  .section-pic-container2 >img{
+    border-radius: 50%;
+  }
+
   .section-text-p2 {
     font-size: 1.25rem;
   }

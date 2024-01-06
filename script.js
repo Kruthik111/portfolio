@@ -16,47 +16,62 @@ function toggleMenu() {
 var lastScrollLocation = 0;
 var sec = ["#top", '#profile', 'about'];
 
+var darkmode = document.querySelectorAll(".mode");
+
+// console.log(darkmode.length);
+
 //for dark mode
 
 var mode = "light";
-var darkmode = document.getElementById("dark-mode");
-darkmode.addEventListener("click", () => {
-    // document.documentElement.setAttribute("dark-theme","dark");
-    // document.getElementById("Page-1").style.fill = "blue";
+
+// darkmode.addEventListener("click", modechange());
+function modechange() {
+    var darkmode = document.querySelectorAll(".mode");
     if (mode === "light") {
         mode = "dark";
         document.documentElement.setAttribute("dark-theme","dark");
-        darkmode.classList.add("spin");
-        
+        for(let i=0;i<2;i++){
+        darkmode[i].classList.add("spin");
+        }
+        //darkmode
         setTimeout(() => {
             document.body.style.color = "white";
             document.querySelector(".btn-color-2").classList.add("white-text");
-            darkmode.src = "./assets/sun-icon.png";
+            
             document.body.style.backgroundColor = "rgb(0, 0, 5)";
+            
             // document.querySelectorall(".details-container").classList.add(".glow-shadow");
-            darkmode.classList.remove("spin");
-            var batimg = document.getElementById("profileimg").src = "./assets/batman-image.webp";
+            for(let i=0;i<2;i++){
+                
+            darkmode[i].src = "./assets/sun-icon.png";
+            darkmode[i].classList.remove("spin");
+            }
+             document.getElementById("profileimg").src = "./assets/batman-image.webp";
             toWhiteColor();
         
         }, 1000);
     } else {
         document.documentElement.setAttribute("dark-theme","light");
         mode = "light";
-        
-        darkmode.classList.add("reverse-spin");
+        for(let i=0;i<2;i++){
+        darkmode[i].classList.add("reverse-spin");
+        }
         // document.querySelector(".details-container").remove("glow-shadow");
         setTimeout(() => {
             document.body.style.color = "black";
             document.querySelector(".btn-color-2").classList.remove("white-text");
-            darkmode.src = "./assets/moon-icon.png";
+            for(let i=0;i<2;i++){
+            darkmode[i].src = "./assets/moon-icon.png";
+            darkmode[i].classList.remove("reverse-spin");
+                }
+            
             document.body.style.backgroundColor = "#fff";
-            darkmode.classList.remove("reverse-spin");
+            
             var batimg = document.getElementById("profileimg").src = "./assets/Profilepic.jpg";
             todarkColor();
         }, 1000);
     }
-
-});
+}
 // function to add white text class to make text color to white in background
 function toWhiteColor(){
     var alllinks = document.querySelectorAll("a");
@@ -71,18 +86,15 @@ function toWhiteColor(){
     // for(let i=0;i<alllimg.length;i++){
     // allimg[i].classList.add("white-img");
     // }
-    var shadow = document.getElementsByClassName("details-container").classList.add("glow-shadow");
+    // var shadow = document.getElementsByClassName("details-container").classList.add("glow-shadow");
 }
 function todarkColor(){
     var alllinks = document.querySelectorAll("a");
     for(let i=0;i<alllinks.length;i++){
     alllinks[i].classList.remove("white-text");
     }
-    var alllimg = document.querySelectorAll("img");
-    for(let i=0;i<alllimg.length;i++){
-    allimg[i].classList.add("white-img");
-    }
-    var shadow = document.getElementsByClassName("details-container").classList.add("glow-shadow");
+    
+    // var shadow = document.getElementsByClassName("details-container").classList.add("glow-shadow");
 }
 
 //for automatic copyright update
