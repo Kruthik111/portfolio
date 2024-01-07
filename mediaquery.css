@@ -93,6 +93,7 @@
 
   article {
     font-size: 1rem;
+    width: 8rem;
   }
 
   footer nav {
@@ -136,8 +137,7 @@
   }
 
   .section-pic-container2 {
-    width: auto;
-    height: 46vw;
+   
     justify-content: center;
   }
 
