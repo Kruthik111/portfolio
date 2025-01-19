@@ -44,6 +44,7 @@ function modechange() {
   if (mode === "light") {
     mode = "dark";
     document.documentElement.setAttribute("dark-theme", "dark");
+    document.getElementById("about-text").color = "white";
     for (let i = 0; i < 2; i++) {
       darkmode[i].classList.add("spin");
     }
@@ -53,6 +54,7 @@ function modechange() {
       document.querySelector(".btn-color-2").classList.add("white-text");
 
       document.body.style.backgroundColor = "rgb(0, 0, 5)";
+      document.getElementById("profileimg").src = "./assets/batman-image.webp";
 
       // document.querySelectorall(".details-container").classList.add(".glow-shadow");
       for (let i = 0; i < 2; i++) {
@@ -68,7 +70,6 @@ function modechange() {
       for (let i = 0; i < detailContainer.length; i++) {
         detailContainer[i].classList.add("glow-shadow");
       }
-      document.getElementById("profileimg").src = "./assets/batman-image.webp";
       toWhiteColor();
     }, 500);
   } else {
@@ -81,6 +82,8 @@ function modechange() {
     setTimeout(() => {
       document.body.style.color = "black";
       document.querySelector(".btn-color-2").classList.remove("white-text");
+      var batimg = (document.getElementById("profileimg").src =
+        "./assets/cow-boy-img.jpg");
       for (let i = 0; i < 2; i++) {
         darkmode[i].src = "./assets/moon-icon.png";
         darkmode[i].classList.remove("reverse-spin");
@@ -95,9 +98,8 @@ function modechange() {
         detailContainer[i].classList.remove("glow-shadow");
       }
       document.body.style.backgroundColor = "#fff";
+      document.getElementsByTagName("p").color = "white";
 
-      var batimg = (document.getElementById("profileimg").src =
-        "./assets/Profilepic.jpg");
       todarkColor();
     }, 500);
   }
@@ -129,3 +131,12 @@ document.getElementById(
 ).innerHTML = `Copyright &#169; ${year} Kruthik s. All Rights Reserved.`;
 
 var torch = document.getElementById("torch");
+
+function setProfileToGif() {
+  if (mode === "light") {
+    document.getElementById("profileimg").src = "./assets/cow-boy-gif.gif";
+    setTimeout(() => {
+      document.getElementById("profileimg").src = "./assets/cow-boy-img.jpg";
+    }, 5000);
+  }
+}
